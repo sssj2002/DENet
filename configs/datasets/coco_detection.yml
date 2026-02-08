@@ -1,0 +1,23 @@
+metric: COCO
+num_classes: 50
+
+TrainDataset:
+  name: COCODataSet
+  image_dir:  /autodl-fs/data/RIS/train
+  anno_path: /autodl-fs/data/RIS/annotations/ShipImageNet_train_bnbox_level_3.json
+  dataset_dir: /autodl-fs/data/RIS/train
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+  allow_empty: true
+
+EvalDataset:
+  name: COCODataSet
+  image_dir:  /autodl-fs/data/RIS/val
+  anno_path: /autodl-fs/data/RIS/annotations/ShipImageNet_val_bnbox_level_3.json
+  dataset_dir: /autodl-fs/data/RIS/val
+  allow_empty: true
+
+TestDataset:
+  name: ImageFolder
+  anno_path: /autodl-fs/data/RIS/annotations/ShipImageNet_test_bnbox_level_3.json
+  dataset_dir:  /autodl-fs/data/RIS/test
+  allow_empty: true
